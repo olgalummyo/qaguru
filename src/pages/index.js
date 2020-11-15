@@ -1,10 +1,10 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Text, Button, Image, Box, Icon, Input } from "@quarkly/widgets";
+import { Theme, Link, Text, Image, Hr, Icon, Box, Button, Input } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { Override, Section, StackItem, Stack, Formspree } from "@quarkly/components";
+import { MdArrowDownward, MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
 		<Helmet>
@@ -14,11 +14,69 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Section padding="100px 0" sm-padding="40px 0">
-			<Override slot="SectionContent" align-items="center" />
+		<Section
+			padding="60px 0"
+			sm-padding="40px 0"
+			min-height="600px"
+			sm-min-height="auto"
+			background="--color-light"
+			display="flex"
+			flex-direction="column"
+		>
+			<Override slot="SectionContent" flex="1 1 auto" />
 			<Text as="h2" font="--headline1" md-font="--headline2" margin="20px 0 0 0">
 				About Us
 			</Text>
+			<Image width="64px" height="64px" />
+			<Hr />
+			<Text
+				font="--base"
+				text-transform="uppercase"
+				letter-spacing="1px"
+				max-width="850px"
+				color="--grey"
+				margin="auto 0px 0px 0px"
+			>
+				Eyebrow
+			</Text>
+			<Text
+				as="h1"
+				margin="8px 0px 32px"
+				font="--headline1"
+				md-font="--headline2"
+				color="--dark"
+				max-width="850px"
+			>
+				Heading
+			</Text>
+		</Section>
+		<Section
+			background="linear-gradient(0deg,rgba(4, 8, 12, 0.6) 0%,rgba(4, 8, 12, 0.6) 100%),--color-darkL2 url(https://images.unsplash.com/photo-1510125594188-5afc74c8cc43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80) center/cover"
+			padding="64px 0"
+			sm-padding="40px 0"
+			color="--light"
+			font="--base"
+		>
+			<Stack>
+				<StackItem width="75%" lg-width="100%">
+					<Override slot="StackItemContent" flex-direction="column" />
+					<Text color="--lightD2" letter-spacing="1px" text-transform="uppercase" margin="0">
+						Excellence in everything
+					</Text>
+					<Text as="h1" font="--headline1" md-font="--headline2" margin="10px 0">
+						Striving for perfection in everything we do. Unparalleled service for everyone.
+					</Text>
+				</StackItem>
+			</Stack>
+			<Box text-align="center" margin="96px 0 0 0">
+				<Text margin="8px 0" text-transform="uppercase">
+					Who we are
+				</Text>
+				<Icon category="md" margin="0 auto" icon={MdArrowDownward} />
+			</Box>
+		</Section>
+		<Section padding="100px 0" sm-padding="40px 0">
+			<Override slot="SectionContent" align-items="center" />
 			<Text as="p" font="--lead" margin="20px 0 0 0">
 				Hi! I'm a paragraph. Click here to add your own text and edit me. It’s a piece of cake. I’m a great space for you to tell a story and let your site visitors know more about you. Talk about your business and what products and services you offer. Share how you came up with the idea for your company and what makes you different from your competitors. Make your business stand out and show your visitors who you are.
 			</Text>
@@ -37,9 +95,8 @@ export default (() => {
 				<Box padding="10px">
 					<Image src="https://images.unsplash.com/photo-1501870190084-cdf29f15ef87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" width="320px" max-width="100%" />
 				</Box>
-				<Box padding="10px">
-					<Image src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" width="320px" max-width="100%" />
-				</Box>
+				<Box padding="10px" />
+				<Image src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" width="320px" max-width="100%" />
 				<Box padding="10px">
 					<Image
 						src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80"
@@ -154,16 +211,6 @@ export default (() => {
 							background="--color-primary"
 							border-radius="50%"
 						/>
-						<Icon
-							category="fa"
-							icon={FaLinkedinIn}
-							width="48px"
-							height="48px"
-							size="24px"
-							margin-right="16px"
-							background="--color-primary"
-							border-radius="50%"
-						/>
 					</Box>
 				</StackItem>
 				<StackItem width="50%" md-width="100%">
@@ -209,9 +256,24 @@ export default (() => {
 							</Stack>
 						</Formspree>
 					</Box>
+					<Icon
+						category="fa"
+						icon={FaLinkedinIn}
+						width="48px"
+						height="48px"
+						size="24px"
+						margin-right="16px"
+						background="--color-primary"
+						border-radius="50%"
+					/>
 				</StackItem>
 			</Stack>
 		</Section>
+		<Input />
+		<Box />
+		<Button>
+			Button
+		</Button>
 		<Link
 			font={"--capture"}
 			font-size={"10px"}
